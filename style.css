@@ -10,13 +10,13 @@ body {
 }
 
 .container {
-  width: 90%;            
-  max-width: 400px;      
+  width: 90%;        
+  max-width: 400px;  
+  margin: 0 auto;   
   background-color: #FF0080;
   color: black;
   padding: 15px;
-  border-radius: 8px;
-  box-sizing: border-box;
+  border-radius: 0;
 }
 
 h1 {
@@ -128,11 +128,6 @@ h1 {
   }
 }
 
-@media (max-width: 480px) {
-  .container {
-    border-radius: 0; 
-  }
-}
 
 
 
