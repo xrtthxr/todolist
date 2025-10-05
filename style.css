@@ -1,0 +1,91 @@
+body{
+  background-color: black;
+  font-family: "Inter Tight", sans-serif;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+  width: 400px;
+  background-color: #FF0080;
+  color: black;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.input-area {
+  margin: 20px;
+  display: flex;
+}
+
+#taskInput {
+  padding: 10px;
+  border: black;
+  border-width: 2px;
+  border-style: solid;
+  width: 70%;
+  margin-right: 10px;
+  background-color: #FF0080;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: black;
+}
+
+::placeholder {
+  font-family: "Inter Tight";
+  color: black;
+}
+
+#addTaskBtn {
+  color: #FF0080;
+  background-color: black;
+  border: none;
+  width: 30%;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#taskList {
+  list-style: none;
+  padding: 10px;
+  margin: 10px 20px;
+}
+
+#taskList li.completed span {
+  text-decoration: line-through;
+  color: black;
+}
+
+#taskList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+#taskList li span {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.delete {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
