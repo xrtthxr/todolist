@@ -13,6 +13,53 @@ taskInput.addEventListener('keypress', e => {
   if (e.key === 'Enter') addTask();
 });
 
+function saveTasks() {
+  const tasks = [];
+  document.querySelectorAll('#taskList li').forEach(li => {
+    tasks.push({
+      text: li.querySelector('span').textContent,
+      completed: li.classList.contains('completed')
+    });
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks.forEach(task => {
+    const li = document.createElement('li');
+
+    const checkBtn = document.createElement('img');
+    checkBtn.src = task.completed ? checkedIcon.src : uncheckedIcon.src;
+    checkBtn.classList.add('check-icon');
+
+    const span = document.createElement('span');
+    span.textContent = task.text;
+
+    const delBtn = document.createElement('button');
+    delBtn.textContent = '✖';
+    delBtn.classList.add('delete');
+
+    if(task.completed) li.classList.add('completed');
+
+    checkBtn.addEventListener('click', () => {
+      li.classList.toggle('completed');
+      checkBtn.src = li.classList.contains('completed') ? checkedIcon.src : uncheckedIcon.src;
+      saveTasks();
+    });
+
+    delBtn.addEventListener('click', () => {
+      li.remove();
+      saveTasks();
+    });
+
+    li.appendChild(checkBtn);
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    taskList.appendChild(li);
+  });
+}
+
 function addTask() {
   const text = taskInput.value.trim();
   if (!text) return;
@@ -20,7 +67,7 @@ function addTask() {
   const li = document.createElement('li');
 
   const checkBtn = document.createElement('img');
-  checkBtn.src = uncheckedIcon.src; 
+  checkBtn.src = uncheckedIcon.src;
   checkBtn.classList.add('check-icon');
 
   const span = document.createElement('span');
@@ -32,14 +79,14 @@ function addTask() {
 
   checkBtn.addEventListener('click', () => {
     li.classList.toggle('completed');
-    if (li.classList.contains('completed')) {
-      checkBtn.src = checkedIcon.src; // usar precargada
-    } else {
-      checkBtn.src = uncheckedIcon.src; // usar precargada
-    }
+    checkBtn.src = li.classList.contains('completed') ? checkedIcon.src : uncheckedIcon.src;
+    saveTasks();
   });
 
-  delBtn.addEventListener('click', () => li.remove());
+  delBtn.addEventListener('click', () => {
+    li.remove();
+    saveTasks();
+  });
 
   li.appendChild(checkBtn);
   li.appendChild(span);
@@ -48,4 +95,8 @@ function addTask() {
 
   taskInput.value = '';
   taskInput.focus();
+
+  saveTasks();
 }
+
+window.addEventListener('DOMContentLoaded', loadTasks);
