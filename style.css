@@ -1,12 +1,11 @@
-body {
+body{
   background-color: black;
   font-family: "Inter Tight", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  margin: 0 auto;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container {
@@ -14,32 +13,29 @@ body {
   background-color: #FF0080;
   color: black;
   padding: 10px;
-  border-radius: 0;
 }
 
 h1 {
   text-align: center;
-  margin: 0 0 10px 0;
 }
 
 .input-area {
+  margin: 20px;
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 15px 0;
 }
 
 #taskInput {
   padding: 10px;
-  border: 2px solid black;
+  border: black;
+  border-width: 2px;
+  border-style: solid;
   width: 70%;
+  margin-right: 10px;
   background-color: #FF0080;
-  color: black;
-  box-sizing: border-box;
-  outline: none;
 }
 
 #taskInput:focus {
+  outline: none;
   border-color: black;
 }
 
@@ -49,32 +45,37 @@ h1 {
 }
 
 #addTaskBtn {
-  width: 25%;
-  background-color: black;
   color: #FF0080;
+  background-color: black;
   border: none;
-  font-weight: bold;
+  width: 30%;
+}
+
+.check-icon {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  padding: 10px;
-  box-sizing: border-box;
+  margin-right: 10px;
 }
 
 #taskList {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  margin: 10px 20px;
+}
+
+#taskList li.completed span {
+  text-decoration: line-through;
+  color: black;
 }
 
 #taskList li {
-  background-color: black;
-  color: #FF0080;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 10px;
   margin-bottom: 8px;
   border-radius: 4px;
-  box-sizing: border-box;
 }
 
 #taskList li span {
@@ -82,48 +83,11 @@ h1 {
   margin-left: 10px;
 }
 
-#taskList li.completed span {
-  text-decoration: line-through;
-  color: gray;
-}
-
-.check-icon {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-}
-
 .delete {
   background: none;
   border: none;
-  color: #FF0080;
-  font-size: 1.2rem;
+  color: black;
   cursor: pointer;
-  margin-left: 5px;
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-
-  #taskInput, #addTaskBtn {
-    width: 100%;
-    margin: 5px 0;
-  }
-
-  .check-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .delete {
-    font-size: 1rem;
-  }
-
-  #taskList li {
-    padding: 6px 5px;
-  }
 }
 
 
