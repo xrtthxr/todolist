@@ -6,11 +6,11 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  margin: 0 auto;
 }
 
 .container {
   width: 90%;
-  max-width: 400px;
   background-color: #FF0080;
   color: black;
   padding: 15px;
@@ -126,3 +126,4 @@ h1 {
     padding: 6px 5px;
   }
 }
+
