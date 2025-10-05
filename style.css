@@ -14,7 +14,6 @@ body {
   background-color: #FF0080;
   color: black;
   padding: 15px;
-  border-radius: 0px;
   box-sizing: border-box;
 }
 
@@ -132,4 +131,5 @@ h1 {
     border-radius: 0; 
   }
 }
+
 
