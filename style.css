@@ -127,3 +127,8 @@ h1 {
   }
 }
 
+@media (max-width: 480px) {
+  .container {
+    border-radius: 0; 
+  }
+}
