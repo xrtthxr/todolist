@@ -10,12 +10,10 @@ body {
 }
 
 .container {
-  width: 90%;        
-  max-width: 400px;  
-  margin: 0 auto;   
+  width: 400px;
   background-color: #FF0080;
   color: black;
-  padding: 15px;
+  padding: 10px;
   border-radius: 0;
 }
 
@@ -127,6 +125,7 @@ h1 {
     padding: 6px 5px;
   }
 }
+
 
 
 
